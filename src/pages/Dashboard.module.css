@@ -1,0 +1,17 @@
+main {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background-color: rgb(183, 189, 248);
+}
+
+.cardArea {
+    height: 100%;
+    width: 100%;
+    padding: 2vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 2rem;
+}

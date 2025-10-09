@@ -1,0 +1,11 @@
+header {
+    background-color:rgb(54, 58, 79)			;
+    color: white;
+    align-content: center;
+}
+
+.headerText {
+    font-size: 2rem;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
