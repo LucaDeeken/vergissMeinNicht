@@ -18,3 +18,33 @@ header {
     top: 50%;
     transform: translateY(-50%);
 }
+
+@media (max-width: 600px) {
+
+.logo {
+    position: absolute;
+    height: 80px;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.headerText {
+    font-size: 2rem;
+}
+
+}
+
+@media (max-width: 490px) {
+
+.headerText {
+    font-size: 1.8rem;
+}
+
+.logo {
+    position: absolute;
+    height: 60px;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+}

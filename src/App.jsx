@@ -1,17 +1,8 @@
-import { useState } from 'react'
-import Header from "./components/Header.jsx";
-import Dashboard from "./pages/Dashboard.jsx";
-
-import './App.css'
+// src/App.jsx
+import AppRouter from "./routes/AppRouter";
 
 function App() {
-
-  return (
-    <>
-    <Header />
-    <Dashboard />
-    </>
-  )
+  return <AppRouter />;
 }
 
-export default App
+export default App;

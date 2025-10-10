@@ -4,3 +4,10 @@
   display: grid;
   grid-template-rows: 150px 1fr;
 }
+
+main {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+      background: linear-gradient(to right, #4A90E2, #c2e9fb);
+}

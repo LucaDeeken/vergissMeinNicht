@@ -32,3 +32,11 @@
          text-decoration: underline;
 
 }
+
+@media (max-width: 800px) {
+
+    .card {
+    height: 250px;
+    width: 250px;
+}
+}
