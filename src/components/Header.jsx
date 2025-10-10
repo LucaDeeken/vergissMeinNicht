@@ -1,4 +1,6 @@
 import styles from './Header.module.css';
+import logo from '../assets/images/blume.png';
+
 
 function Header() {
 
@@ -6,6 +8,7 @@ function Header() {
     <>
     <header className={styles.header}>
     <p className={styles.headerText}>VergissMeinNicht</p>
+    <img className={styles.logo} src={logo} alt="Logo" />
     </header>
     </>
   )

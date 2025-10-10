@@ -6,9 +6,9 @@ function Card({cardContent}) {
   return (
     <>
     <section className={styles.card}>
-        <p className={styles.cardContent}> {cardContent.label} </p>
-        <p className={styles.cardContent}> {cardContent.id} </p>
-        <p className={styles.cardContent}> {cardContent.value} </p>
+        <p className={`${styles.cardContent} ${styles.kalenderWoche}`}>{cardContent.week}</p>
+        <p className={styles.cardContent}> Jacken-Quote: {cardContent.jackenRate} </p>
+        <p className={styles.cardContent}> Vergess-Quote: {cardContent.vergessRate} </p>
 
 
     </section>

@@ -2,7 +2,8 @@ main {
     display: grid;
     justify-content: center;
     align-content: center;
-    background-color: rgb(183, 189, 248);
+      background: linear-gradient(to right, #4A90E2, #c2e9fb);
+
 }
 
 .cardArea {
