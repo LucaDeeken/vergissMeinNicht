@@ -1,0 +1,23 @@
+.weekdayTitle {
+    font-weight: 700;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.weekdayContent {
+    display: grid;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 10px;
+    gap: 7px;
+}
+
+.cardContentLine  {
+    display: flex;
+    gap: 8px;
+}
+
+.cardContentLine span {
+   align-content: center;
+   font-size: 14px;
+}

@@ -1,11 +1,15 @@
 import styles from './Dashboard.module.css';
 import Card from "../components/Card";
+import Modal from "../components/Modal";
+import CardContent from "../components/CardContent"
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+
 
 function Dashboard() {
 
   let [cardObjectList, setObjectList] = useState([]);
+  const [openModal, setModalOpen] = useState(false);
   const cardsPerPage = 8;
   const { page } = useParams(); 
   const navigate = useNavigate();
@@ -250,141 +254,6 @@ function Dashboard() {
         jackenRate: 57.14,
         vergessRate: 28.57,
       },
-            {
-        id: crypto.randomUUID(),
-        week: "KW 48",
-        days: {
-          Montag: { Jacke: false, Geldbeutel: true, Schlüssel: true, Wetter: "rainy" },
-          Dienstag: { Jacke: true, Geldbeutel: false, Schlüssel: false, Wetter: "cold" },
-          Mittwoch: { Jacke: false, Geldbeutel: true, Schlüssel: true, Wetter: "warm" },
-          Donnerstag: { Jacke: true, Geldbeutel: true, Schlüssel: false, Wetter: "cloudy" },
-          Freitag: { Jacke: true, Geldbeutel: false, Schlüssel: true, Wetter: "sunny" },
-          Samstag: { Jacke: false, Geldbeutel: true, Schlüssel: false, Wetter: "cold" },
-          Sonntag: { Jacke: true, Geldbeutel: true, Schlüssel: true, Wetter: "warm" },
-        },
-        jackenRate: 57.14,
-        vergessRate: 28.57,
-      },
-            {
-        id: crypto.randomUUID(),
-        week: "KW 48",
-        days: {
-          Montag: { Jacke: false, Geldbeutel: true, Schlüssel: true, Wetter: "rainy" },
-          Dienstag: { Jacke: true, Geldbeutel: false, Schlüssel: false, Wetter: "cold" },
-          Mittwoch: { Jacke: false, Geldbeutel: true, Schlüssel: true, Wetter: "warm" },
-          Donnerstag: { Jacke: true, Geldbeutel: true, Schlüssel: false, Wetter: "cloudy" },
-          Freitag: { Jacke: true, Geldbeutel: false, Schlüssel: true, Wetter: "sunny" },
-          Samstag: { Jacke: false, Geldbeutel: true, Schlüssel: false, Wetter: "cold" },
-          Sonntag: { Jacke: true, Geldbeutel: true, Schlüssel: true, Wetter: "warm" },
-        },
-        jackenRate: 57.14,
-        vergessRate: 28.57,
-      },
-            {
-        id: crypto.randomUUID(),
-        week: "KW 48",
-        days: {
-          Montag: { Jacke: false, Geldbeutel: true, Schlüssel: true, Wetter: "rainy" },
-          Dienstag: { Jacke: true, Geldbeutel: false, Schlüssel: false, Wetter: "cold" },
-          Mittwoch: { Jacke: false, Geldbeutel: true, Schlüssel: true, Wetter: "warm" },
-          Donnerstag: { Jacke: true, Geldbeutel: true, Schlüssel: false, Wetter: "cloudy" },
-          Freitag: { Jacke: true, Geldbeutel: false, Schlüssel: true, Wetter: "sunny" },
-          Samstag: { Jacke: false, Geldbeutel: true, Schlüssel: false, Wetter: "cold" },
-          Sonntag: { Jacke: true, Geldbeutel: true, Schlüssel: true, Wetter: "warm" },
-        },
-        jackenRate: 57.14,
-        vergessRate: 28.57,
-      },
-            {
-        id: crypto.randomUUID(),
-        week: "KW 48",
-        days: {
-          Montag: { Jacke: false, Geldbeutel: true, Schlüssel: true, Wetter: "rainy" },
-          Dienstag: { Jacke: true, Geldbeutel: false, Schlüssel: false, Wetter: "cold" },
-          Mittwoch: { Jacke: false, Geldbeutel: true, Schlüssel: true, Wetter: "warm" },
-          Donnerstag: { Jacke: true, Geldbeutel: true, Schlüssel: false, Wetter: "cloudy" },
-          Freitag: { Jacke: true, Geldbeutel: false, Schlüssel: true, Wetter: "sunny" },
-          Samstag: { Jacke: false, Geldbeutel: true, Schlüssel: false, Wetter: "cold" },
-          Sonntag: { Jacke: true, Geldbeutel: true, Schlüssel: true, Wetter: "warm" },
-        },
-        jackenRate: 57.14,
-        vergessRate: 28.57,
-      },
-            {
-        id: crypto.randomUUID(),
-        week: "KW 48",
-        days: {
-          Montag: { Jacke: false, Geldbeutel: true, Schlüssel: true, Wetter: "rainy" },
-          Dienstag: { Jacke: true, Geldbeutel: false, Schlüssel: false, Wetter: "cold" },
-          Mittwoch: { Jacke: false, Geldbeutel: true, Schlüssel: true, Wetter: "warm" },
-          Donnerstag: { Jacke: true, Geldbeutel: true, Schlüssel: false, Wetter: "cloudy" },
-          Freitag: { Jacke: true, Geldbeutel: false, Schlüssel: true, Wetter: "sunny" },
-          Samstag: { Jacke: false, Geldbeutel: true, Schlüssel: false, Wetter: "cold" },
-          Sonntag: { Jacke: true, Geldbeutel: true, Schlüssel: true, Wetter: "warm" },
-        },
-        jackenRate: 57.14,
-        vergessRate: 28.57,
-      },
-            {
-        id: crypto.randomUUID(),
-        week: "KW 48",
-        days: {
-          Montag: { Jacke: false, Geldbeutel: true, Schlüssel: true, Wetter: "rainy" },
-          Dienstag: { Jacke: true, Geldbeutel: false, Schlüssel: false, Wetter: "cold" },
-          Mittwoch: { Jacke: false, Geldbeutel: true, Schlüssel: true, Wetter: "warm" },
-          Donnerstag: { Jacke: true, Geldbeutel: true, Schlüssel: false, Wetter: "cloudy" },
-          Freitag: { Jacke: true, Geldbeutel: false, Schlüssel: true, Wetter: "sunny" },
-          Samstag: { Jacke: false, Geldbeutel: true, Schlüssel: false, Wetter: "cold" },
-          Sonntag: { Jacke: true, Geldbeutel: true, Schlüssel: true, Wetter: "warm" },
-        },
-        jackenRate: 57.14,
-        vergessRate: 28.57,
-      },
-            {
-        id: crypto.randomUUID(),
-        week: "KW 48",
-        days: {
-          Montag: { Jacke: false, Geldbeutel: true, Schlüssel: true, Wetter: "rainy" },
-          Dienstag: { Jacke: true, Geldbeutel: false, Schlüssel: false, Wetter: "cold" },
-          Mittwoch: { Jacke: false, Geldbeutel: true, Schlüssel: true, Wetter: "warm" },
-          Donnerstag: { Jacke: true, Geldbeutel: true, Schlüssel: false, Wetter: "cloudy" },
-          Freitag: { Jacke: true, Geldbeutel: false, Schlüssel: true, Wetter: "sunny" },
-          Samstag: { Jacke: false, Geldbeutel: true, Schlüssel: false, Wetter: "cold" },
-          Sonntag: { Jacke: true, Geldbeutel: true, Schlüssel: true, Wetter: "warm" },
-        },
-        jackenRate: 57.14,
-        vergessRate: 28.57,
-      },
-            {
-        id: crypto.randomUUID(),
-        week: "KW 48",
-        days: {
-          Montag: { Jacke: false, Geldbeutel: true, Schlüssel: true, Wetter: "rainy" },
-          Dienstag: { Jacke: true, Geldbeutel: false, Schlüssel: false, Wetter: "cold" },
-          Mittwoch: { Jacke: false, Geldbeutel: true, Schlüssel: true, Wetter: "warm" },
-          Donnerstag: { Jacke: true, Geldbeutel: true, Schlüssel: false, Wetter: "cloudy" },
-          Freitag: { Jacke: true, Geldbeutel: false, Schlüssel: true, Wetter: "sunny" },
-          Samstag: { Jacke: false, Geldbeutel: true, Schlüssel: false, Wetter: "cold" },
-          Sonntag: { Jacke: true, Geldbeutel: true, Schlüssel: true, Wetter: "warm" },
-        },
-        jackenRate: 57.14,
-        vergessRate: 28.57,
-      },
-            {
-        id: crypto.randomUUID(),
-        week: "KW 48",
-        days: {
-          Montag: { Jacke: false, Geldbeutel: true, Schlüssel: true, Wetter: "rainy" },
-          Dienstag: { Jacke: true, Geldbeutel: false, Schlüssel: false, Wetter: "cold" },
-          Mittwoch: { Jacke: false, Geldbeutel: true, Schlüssel: true, Wetter: "warm" },
-          Donnerstag: { Jacke: true, Geldbeutel: true, Schlüssel: false, Wetter: "cloudy" },
-          Freitag: { Jacke: true, Geldbeutel: false, Schlüssel: true, Wetter: "sunny" },
-          Samstag: { Jacke: false, Geldbeutel: true, Schlüssel: false, Wetter: "cold" },
-          Sonntag: { Jacke: true, Geldbeutel: true, Schlüssel: true, Wetter: "warm" },
-        },
-        jackenRate: 57.14,
-        vergessRate: 28.57,
-      },
                   {
         id: crypto.randomUUID(),
         week: "KW 48",
@@ -444,7 +313,7 @@ function Dashboard() {
               key={object.id}
               className="card"
             >
-              <Card cardContent = {object} />
+              <Card cardContent = {object}  onClick={() => { setModalOpen(true)}}/>
             </div>
           ))}
      
@@ -464,6 +333,61 @@ function Dashboard() {
           ))}
 
         </div>
+                  {openModal && (
+            <Modal>
+              {" "}
+             
+                <div className= {styles.moduleSection}>
+                    <div className= {styles.moduleHeaderContainer} >
+                        <h1 className= {styles.moduleHeader} >Wochenansicht</h1>
+                    </div>
+                    <div className= {styles.statsContainer}>
+                    <section className= {styles.wochenTag}  >
+                        <CardContent  weekday = { "Montag"} />
+                    </section>
+                    <section className= {styles.wochenTag}>
+                        <CardContent weekday = { "Dienstag"} />
+                    </section>
+                    <section className= {styles.wochenTag}>
+                        <CardContent weekday = { "Mittwoch"} />
+                    </section>
+                    <section className= {styles.wochenTag}>
+                        <CardContent weekday = { "Donnerstag"}/>
+                    </section>
+                    <section className= {styles.wochenTag}>
+                        <CardContent weekday = { "Freitag"}/>
+                    </section>
+                    <section className= {styles.wochenTag}>
+                        <CardContent weekday = { "Samstag"}/>
+                    </section>
+                    <section className= {styles.wochenTag}>
+                        <CardContent weekday = { "Sonntag"}/>
+                    </section>
+                    </div>
+                <div className= {styles.btnContainer} >
+                    <div className= {styles.closeBtn} >
+                        <button className= {styles.moduleBtn}
+                        onClick={() => {
+                            setModalOpen(false);
+                        }}
+                        >
+                        Close!
+                        </button>
+                    </div>
+                <div className= {styles.switchBtn}>
+                    <button className= {styles.moduleBtn}
+                    onClick={() => {
+                        setModalOpen(false);
+                    }}
+                    >
+                  Zur Wochenansicht
+                    </button>
+                </div>
+            </div>
+                </div>
+              
+            </Modal>
+          )}
     </>
   )
 }
