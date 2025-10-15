@@ -1,6 +1,6 @@
 .card {
-  height: 270px;
-  width: 270px;
+  height: 260px;
+  width: 260px;
   background-color: rgb(255, 255, 255);
   border-radius: 20px;
   box-shadow:
@@ -12,25 +12,31 @@
   row-gap: 8px;
 }
 
-.card:hover {
+.card:hover,
+.card:hover * {
+  color: white !important;
+  background-color: rgb(31, 30, 30);
   cursor: pointer;
-  background-color: rgb(35, 37, 48);
-  color: white;
 }
 
 .cardContent {
   text-align: center;
   font-family: "lato", sans-serif;
-
   font-weight: 700;
   font-size: 16px;
+  color: rgb(57, 57, 57);
+}
+
+.cardContent span {
+color: rgb(1, 43, 133);
+font-weight: 700;
 }
 
 .kalenderWoche {
   font-size: 20px;
   font-weight: 900;
   padding-bottom: 15px;
-  text-decoration: underline;
+  color: rgb(1, 43, 133);
 }
 
 @media (max-width: 800px) {
@@ -38,4 +44,8 @@
     height: 230px;
     width: 230px;
   }
+
+  .kalenderWoche {
+  font-size: 19px;
+}
 }

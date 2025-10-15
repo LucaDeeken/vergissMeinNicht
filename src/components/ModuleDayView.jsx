@@ -1,7 +1,7 @@
 import CardContent from "./CardContent";
 import styles from "../pages//Dashboard.module.css";
 
-function ModuleDayView({ setModalPage }) {
+function ModuleDayView({ setModalPage, object }) {
   return (
     <>
       <div className={styles.moduleHeaderContainer}>
@@ -9,25 +9,25 @@ function ModuleDayView({ setModalPage }) {
       </div>
       <div className={styles.statsContainer}>
         <section className={styles.wochenTag}>
-          <CardContent weekday={"Montag"} />
+          <CardContent weekday={"Montag"} object = {object.days.Montag} />
         </section>
         <section className={styles.wochenTag}>
-          <CardContent weekday={"Dienstag"} />
+          <CardContent weekday={"Dienstag"} object = {object.days.Dienstag} />
         </section>
         <section className={styles.wochenTag}>
-          <CardContent weekday={"Mittwoch"} />
+          <CardContent weekday={"Mittwoch"}object = {object.days.Mittwoch} />
         </section>
         <section className={styles.wochenTag}>
-          <CardContent weekday={"Donnerstag"} />
+          <CardContent weekday={"Donnerstag"}object = {object.days.Donnerstag} />
         </section>
         <section className={styles.wochenTag}>
-          <CardContent weekday={"Freitag"} />
+          <CardContent weekday={"Freitag"}object = {object.days.Freitag} />
         </section>
         <section className={styles.wochenTag}>
-          <CardContent weekday={"Samstag"} />
+          <CardContent weekday={"Samstag"}object = {object.days.Samstag} />
         </section>
         <section className={styles.wochenTag}>
-          <CardContent weekday={"Sonntag"} />
+          <CardContent weekday={"Sonntag"}object = {object.days.Sonntag} />
         </section>
         <div className={styles.btnContainer}>
           <button

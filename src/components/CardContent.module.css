@@ -1,15 +1,15 @@
 .weekdayTitle {
   font-weight: 700;
-  font-size: 18px;
-  padding: 15px;
+  font-size: 17px;
+  padding: 15px 15px 0 15px;
   color: rgb(1, 37, 116);
 }
 
 .weekdayContent {
   display: grid;
   font-weight: 500;
-  font-size: 12px;
-  padding: 15px;
+  font-size: 11px;
+  padding: 13px;
   gap: 4px;
   color: rgb(29, 29, 29);
 }
@@ -21,5 +21,5 @@
 
 .cardContentLine span {
   align-content: center;
-  font-size: 14px;
+  font-size: 11px;
 }

@@ -77,7 +77,7 @@
 .statsContainer {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 20px;
+  gap: 20px;
   justify-content: center;
   margin: 30px 30px 0 30px;
 }
@@ -131,6 +131,14 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
 
+@media (max-width: 1200px) {
+  .btnContainer {
+    padding-bottom: 35px;
+    flex-basis: 100%;
+    position: static;
+  }
+}
+
 @media (max-width: 1000px) {
   .moduleSection {
     margin-bottom: 180px;
@@ -145,11 +153,6 @@
     position: relative;
     row-gap: 15px;
     column-gap: 15px;
-  }
-  .btnContainer {
-    padding-bottom: 35px;
-    flex-basis: 100%;
-    position: static;
   }
 }
 

@@ -27,15 +27,18 @@ h2 {
   animation: appear 1s ease-out forwards;
 }
 
+@media (max-width: 1200px) {
+ .moduleWochenAnsicht {
+    gap: 30px;
+  }
+}
+
 @media (max-width: 1000px) {
   .moduleWochenAnsicht div section {
     height: 215px;
     width: 300px;
   }
 
-  .moduleWochenAnsicht {
-    gap: 30px;
-  }
 }
 
 @media (max-width: 700px) {

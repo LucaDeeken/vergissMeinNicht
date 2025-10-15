@@ -7,8 +7,10 @@ header {
 
 .headerText {
   font-size: 2.3rem;
-  font-family: "Nunito", sans-serif;
+  font-family: "Roboto", sans-serif;
   text-align: center;
+  font-weight: 900;
+  color: #f2f2f2;
 }
 
 .logo {

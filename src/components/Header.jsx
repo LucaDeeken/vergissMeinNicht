@@ -5,7 +5,7 @@ function Header() {
   return (
     <>
       <header className={styles.header}>
-        <p className={styles.headerText}>VergissMeinNicht</p>
+        <p className={styles.headerText}>Vergissmeinnicht</p>
         <img className={styles.logo} src={logo} alt="Logo" />
       </header>
     </>

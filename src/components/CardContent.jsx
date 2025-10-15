@@ -1,29 +1,36 @@
 import styles from "./CardContent.module.css";
 
-function CardContent({ weekday }) {
+function CardContent({ weekday, object }) {
   return (
     <>
       <h2 className={styles.weekdayTitle}> {weekday} </h2>
       <div className={styles.weekdayContent}>
+        <h2></h2>
         <div className={styles.cardContentLine}>
-          <h3>Wetter:</h3>
-          <span>12°C</span>
+          <h3>Avg-Temperatur:</h3>
+          <span>{object.wetter.Temperatur}°C</span>
         </div>
         <div className={styles.cardContentLine}>
-          <h3>Gegenstand vergessen:</h3>
-          <span>True</span>
+          <h3>Avg-Luftfeuchtigkeit:</h3>
+          <span>{object.luftfeuchtigkeit.Luftfeuchtigkeit}%</span>
         </div>
         <div className={styles.cardContentLine}>
-          <h3>Wie oft vergessen:</h3>
-          <span>2</span>
+          <h3>Rausgegangen:</h3>
+          <span>{object.rausgegangen}x</span>
         </div>
         <div className={styles.cardContentLine}>
           <h3>Jacke von Nöten:</h3>
-          <span>true</span>
+        <span>
+        {(object.jacke.Tag || object.jacke.Abend || object.jacke.Nacht) ? "Ja" : "Nein"}
+        </span>
         </div>
         <div className={styles.cardContentLine}>
-          <h3>Wie oft rausgegangen:</h3>
-          <span>2</span>
+          <h3>Gegenstand vergessen:</h3>
+          <span>{object.gegenstaende.vergessen}</span>
+        </div>
+        <div className={styles.cardContentLine}>
+          <h3>Gegenstand dabei:</h3>
+          <span>{object.gegenstaende.nichtVergessen}</span>
         </div>
       </div>
     </>

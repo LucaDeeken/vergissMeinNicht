@@ -27,6 +27,7 @@
 
 .closeBtn {
   position: absolute;
+  z-index: 10;
   right: 0;
   height: 50px;
 }
@@ -42,11 +43,18 @@
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .modalContent {
     height: 95%;
     width: 95%;
+            overflow-y: auto;
   }
+}
+
+@media (max-width: 1000px) {
+    .modalContent {
+        padding-top: 20px;
+}
 }
 
 @media (max-width: 840px) {
