@@ -1,50 +1,47 @@
 header {
-    background-color:rgb(35, 37, 48);
-    color: white;
-    align-content: center;
-    position: relative;
+  background-color: rgb(35, 37, 48);
+  color: white;
+  align-content: center;
+  position: relative;
 }
 
 .headerText {
-    font-size: 2.3rem;
-    font-family: 'Nunito', sans-serif;
-    text-align: center;
+  font-size: 2.3rem;
+  font-family: "Nunito", sans-serif;
+  text-align: center;
 }
 
 .logo {
-    position: absolute;
-    height: 110px;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
+  position: absolute;
+  height: 90px;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 @media (max-width: 600px) {
-
-.logo {
+  .logo {
     position: absolute;
     height: 80px;
     left: 15px;
     top: 50%;
     transform: translateY(-50%);
-}
-.headerText {
+  }
+  .headerText {
     font-size: 2rem;
-}
-
+  }
 }
 
 @media (max-width: 490px) {
-
-.headerText {
+  .headerText {
     font-size: 1.8rem;
-}
+  }
 
-.logo {
+  .logo {
     position: absolute;
-    height: 60px;
+    height: 50px;
     left: 15px;
     top: 50%;
     transform: translateY(-50%);
-}
+  }
 }

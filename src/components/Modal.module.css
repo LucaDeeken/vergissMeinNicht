@@ -4,23 +4,55 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .modalContent {
-    display: grid;
-  background: rgb(241, 239, 239);
-  height: 700px;
-  width: 1200px;
-  padding: 1rem;
-  border-radius: 30px;
+  display: grid;
+  position: relative;
+  background: linear-gradient(to right, #4a90e2, #c2e9fb);
+  height: 750px;
+  width: 1100px;
+  border: 8px solid #ffffff;
+  border-radius: 15px;
   transform: scale(0);
   animation: slideIn 0.3s forwards;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.2),
+    0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.closeBtn {
+  position: absolute;
+  right: 0;
+  height: 50px;
+}
+
+.closeBtn:hover {
+  filter: brightness(2);
+  cursor: pointer;
 }
 
 @keyframes slideIn {
-  to {  transform: scale(1);; }
+  to {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 1000px) {
+  .modalContent {
+    height: 95%;
+    width: 95%;
+  }
+}
+
+@media (max-width: 840px) {
+  .modalContent {
+    max-height: 90vh; /* WICHTIG */
+    overflow-y: auto; /* Scrollbar aktivieren */
+    width: 100%;
+  }
 }

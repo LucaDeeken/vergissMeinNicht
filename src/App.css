@@ -6,8 +6,8 @@
 }
 
 main {
-    display: grid;
-    justify-content: center;
-    align-content: center;
-      background: linear-gradient(to right, #4A90E2, #c2e9fb);
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background: linear-gradient(to right, #4a90e2, #c2e9fb);
 }

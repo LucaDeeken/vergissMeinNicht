@@ -1,33 +1,32 @@
 .cardArea {
-    height: 100%;
-    width: 100%;
-    max-width: 1500px;
-    min-height: 630px;
-    padding: 4vh 4vw 0vh 4vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    gap: 2rem;
-    animation: popIn 0.5s ease-out forwards;
+  height: 100%;
+  width: 100%;
+  max-width: 1500px;
+  min-height: 630px;
+  padding: 4vh 4vw 0vh 4vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 2rem;
+  animation: popIn 0.5s ease-out forwards;
 }
-
 
 .moduleBtn {
 }
 
 .moduleSection {
-    grid-row: 2/3;
-    display: grid;
-       grid-template-rows: 50px 525px 68px;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-rows: 50px 525px 68px;
 }
 
 .moduleHeaderContainer {
-    display: flex;
-    justify-content: center;
-    grid-row: 1/2;
+  display: flex;
+  justify-content: center;
+  grid-row: 1/2;
+  animation: appear 1s ease-out forwards;
 }
-
 
 @keyframes popIn {
   0% {
@@ -43,10 +42,6 @@
     opacity: 1;
   }
 }
-
-
-
-
 
 .pagination {
   display: flex;
@@ -80,28 +75,37 @@
 }
 
 .statsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  justify-content: center;
+  margin: 30px 30px 0 30px;
 }
 
 .statsContainer section {
+  height: 220px;
+  width: 220px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  animation: appear 1s ease-out forwards;
+}
 
-    height: 180px;
-    width: 250px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .btnContainer {
-    grid-row: 3/4;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-    align-items: center;
+  margin-top: 20px;
+  display: grid;
+  justify-content: center;
+  position: absolute;
+  bottom: 50px;
 }
 
 .btnContainer button {
@@ -113,21 +117,44 @@
   font-weight: 500;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+  box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.2);
 }
 
 .btnContainer button:hover {
-  background-color: #e8e8ea;
+  background-color: black;
+  color: white;
   border-color: #999;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
 
+@media (max-width: 1000px) {
+  .moduleSection {
+    margin-bottom: 180px;
+  }
+
+  .statsContainer section {
+    height: 210px;
+    width: 220px;
+  }
+
+  .statsContainer {
+    position: relative;
+    row-gap: 15px;
+    column-gap: 15px;
+  }
+  .btnContainer {
+    padding-bottom: 35px;
+    flex-basis: 100%;
+    position: static;
+  }
+}
 
 @media (max-width: 900px) {
-
-.cardArea {
-
+  .cardArea {
     padding: 10vw;
-}
+  }
 }

@@ -1,0 +1,61 @@
+.moduleWochenAnsicht {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 30px;
+}
+
+.cardContentLine {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+h2 {
+  font-size: 23px;
+  color: rgb(1, 37, 116);
+}
+.moduleWochenAnsicht div section {
+  display: grid;
+  font-size: 14px;
+  height: 215px;
+  width: 350px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  animation: appear 1s ease-out forwards;
+}
+
+@media (max-width: 1000px) {
+  .moduleWochenAnsicht div section {
+    height: 215px;
+    width: 300px;
+  }
+
+  .moduleWochenAnsicht {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 700px) {
+  .moduleWochenAnsicht div section {
+    height: 215px;
+    width: 300px;
+  }
+
+  .moduleWochenAnsicht {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 20px;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
