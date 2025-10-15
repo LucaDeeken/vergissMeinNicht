@@ -17,7 +17,7 @@ h2 {
 }
 .moduleWochenAnsicht div section {
   display: grid;
-  font-size: 14px;
+  font-size: 16px;
   height: 215px;
   width: 350px;
   background-color: #ffffff;
@@ -25,6 +25,7 @@ h2 {
   padding: 25px;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
   animation: appear 1s ease-out forwards;
+  align-items: start;
 }
 
 @media (max-width: 1200px) {
