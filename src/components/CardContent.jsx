@@ -20,9 +20,16 @@ function CardContent({ weekday, object }) {
         </div>
         <div className={styles.cardContentLine}>
           <h3>Jacke von Nöten:</h3>
-        <span>
-        {(object.jacke.Tag || object.jacke.Abend || object.jacke.Nacht) ? "Ja" : "Nein"}
-        </span>
+          <span>
+            {["Tag", "Abend", "Nacht"].some((key) => object.jacke[key] === true)
+              ? "Ja"
+              : ["Tag", "Abend", "Nacht"].every(
+                    (key) =>
+                      object.jacke[key] === "" || object.jacke[key] == null
+                  )
+                ? ""
+                : "Nein"}
+          </span>
         </div>
         <div className={styles.cardContentLine}>
           <h3>Gegenstand vergessen:</h3>

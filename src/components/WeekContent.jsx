@@ -32,9 +32,37 @@ function WeekContent({ weekday, object }) {
             <div className={styles.cardContentLine}>
               <h3>Von Nöten:</h3>
               <span>
-
-              {(object.days.Montag.jacke.Tag || object.days.Montag.jacke.Abend || object.days.Montag.jacke.Nacht || object.days.Dienstag.jacke.Tag || object.days.Dienstag.jacke.Abend || object.days.Dienstag.jacke.Nacht || object.days.Mittwoch.jacke.Tag || object.days.Mittwoch.jacke.Abend || object.days.Mittwoch.jacke.Nacht || object.days.Donnerstag.jacke.Tag || object.days.Donnerstag.jacke.Abend || object.days.Donnerstag.jacke.Nacht || object.days.Freitag.jacke.Tag || object.days.Freitag.jacke.Abend || object.days.Freitag.jacke.Nacht || object.days.Samstag.jacke.Tag || object.days.Samstag.jacke.Abend || object.days.Samstag.jacke.Nacht || object.days.Sonntag.jacke.Tag || object.days.Sonntag.jacke.Abend || object.days.Sonntag.jacke.Nacht) ? "Ja" : "Nein"}
-
+                {[
+                  "Montag",
+                  "Dienstag",
+                  "Mittwoch",
+                  "Donnerstag",
+                  "Freitag",
+                  "Samstag",
+                  "Sonntag",
+                ].some((day) =>
+                  ["Tag", "Abend", "Nacht"].some(
+                    (time) => object.days[day].jacke[time] === true
+                  )
+                )
+                  ? "Ja"
+                  : [
+                        "Montag",
+                        "Dienstag",
+                        "Mittwoch",
+                        "Donnerstag",
+                        "Freitag",
+                        "Samstag",
+                        "Sonntag",
+                      ].every((day) =>
+                        ["Tag", "Abend", "Nacht"].every(
+                          (time) =>
+                            !object.days[day].jacke[time] &&
+                            object.days[day].jacke[time] === ""
+                        )
+                      )
+                    ? ""
+                    : "Nein"}
               </span>
             </div>
           </section>
@@ -45,27 +73,28 @@ function WeekContent({ weekday, object }) {
             <h2>Gegenstände</h2>
             <div className={styles.cardContentLine}>
               <h3>Vergessen:</h3>
-              <span>  {
-    object.days.Montag.gegenstaende.vergessen +
-    object.days.Dienstag.gegenstaende.vergessen +
-    object.days.Mittwoch.gegenstaende.vergessen +
-    object.days.Donnerstag.gegenstaende.vergessen +
-    object.days.Freitag.gegenstaende.vergessen +
-    object.days.Samstag.gegenstaende.vergessen +
-    object.days.Sonntag.gegenstaende.vergessen
-  }</span>
+              <span>
+                {" "}
+                {object.days.Montag.gegenstaende.vergessen +
+                  object.days.Dienstag.gegenstaende.vergessen +
+                  object.days.Mittwoch.gegenstaende.vergessen +
+                  object.days.Donnerstag.gegenstaende.vergessen +
+                  object.days.Freitag.gegenstaende.vergessen +
+                  object.days.Samstag.gegenstaende.vergessen +
+                  object.days.Sonntag.gegenstaende.vergessen}
+              </span>
             </div>
             <div className={styles.cardContentLine}>
               <h3>Nicht vergessen:</h3>
-              <span>{
-    object.days.Montag.gegenstaende.nichtVergessen +
-    object.days.Dienstag.gegenstaende.nichtVergessen +
-    object.days.Mittwoch.gegenstaende.nichtVergessen +
-    object.days.Donnerstag.gegenstaende.nichtVergessen +
-    object.days.Freitag.gegenstaende.nichtVergessen +
-    object.days.Samstag.gegenstaende.nichtVergessen +
-    object.days.Sonntag.gegenstaende.nichtVergessen
-  }</span>
+              <span>
+                {object.days.Montag.gegenstaende.nichtVergessen +
+                  object.days.Dienstag.gegenstaende.nichtVergessen +
+                  object.days.Mittwoch.gegenstaende.nichtVergessen +
+                  object.days.Donnerstag.gegenstaende.nichtVergessen +
+                  object.days.Freitag.gegenstaende.nichtVergessen +
+                  object.days.Samstag.gegenstaende.nichtVergessen +
+                  object.days.Sonntag.gegenstaende.nichtVergessen}
+              </span>
             </div>
             <div className={styles.cardContentLine}>
               <h3>Vergessens-Quote:</h3>
