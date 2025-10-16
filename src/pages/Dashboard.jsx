@@ -16,27 +16,38 @@ function Dashboard() {
   const [selectedObject, setSelectedObject] = useState(null);
 
   useEffect(() => {
-    for (let loop = 39; loop < 42; loop++) {
-      fetch(`http://192.168.137.147:8000/api/weekly-stats?y=2025&w=${loop}`)
-        .then((res) => res.json())
-        .then((data) => {
-          console.log("Parsed JSON response:", data);
-          setObjectList((prev) => [
-            ...prev,
-            {
-              id: crypto.randomUUID(),
-              week: `KW ${loop}`,
-              insgesamt: {
-                rausgegangen: data.totals?.house_left?.toFixed(0) ?? "",
-                vergessRate: data.totals?.forget_rate
-                  ? (data.totals.forget_rate * 100).toFixed(2)
-                  : "",
-                avgLuftfeuchtigkeit:
-                  data.totals?.average_humidity?.toFixed(2) ?? "",
-                avgTemperatur:
-                  data.totals?.average_temperature?.toFixed(2) ?? "",
-              },
-              days: {
+  async function fetchAllWeeks() {
+    try {
+      const weeks = [39, 40, 41, 42]; // Liste der Wochen
+
+      const responses = await Promise.all(
+        weeks.map((week) =>
+          fetch(`http://192.168.137.147:8000/api/weekly-stats?y=2025&w=${week}`)
+            .then((res) => res.json())
+            .then((data) => ({
+              week,
+              data,
+            }))
+        )
+      );
+
+      const newCardList = responses.map(({ week, data }) => ({
+        id: crypto.randomUUID(),
+        week: `KW ${week}`,
+        insgesamt: {
+          rausgegangen: data.totals?.house_left?.toFixed(0) ?? "",
+          vergessRate: data.totals?.forget_rate
+            ? (data.totals.forget_rate * 100).toFixed(2)
+            : "",
+          avgLuftfeuchtigkeit:
+            data.totals?.average_humidity?.toFixed(2) ?? "",
+          avgTemperatur:
+            data.totals?.average_temperature?.toFixed(2) ?? "",
+        },
+        // ...
+        // Kopiere hier deinen gesamten days-Block rein
+        days: {
+          
                 Montag: {
                   rausgegangen:
                     (data.week_days?.monday?.item_stats?.forgotten ?? 0) +
@@ -427,19 +438,21 @@ function Dashboard() {
                       data.week_days?.sunday?.item_stats?.forget_rate ?? "",
                   },
                 },
-              },
-            },
-          ]);
+              
+        },
+      }));
 
-          setData(data);
-          setLoading(false);
-        })
-        .catch((err) => {
-          console.error("Fehler beim Laden:", err);
-          setLoading(false);
-        });
+      setObjectList(newCardList);
+      setData(responses.map((r) => r.data)); // optional, je nach Verwendung
+      setLoading(false);
+    } catch (error) {
+      console.error("Fehler beim Laden:", error);
+      setLoading(false);
     }
-  }, []);
+  }
+
+  fetchAllWeeks();
+}, []);
 
   console.log(cardObjectList);
   //Routing
